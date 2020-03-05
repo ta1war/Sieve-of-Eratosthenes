@@ -1,0 +1,31 @@
+print ("Welcome to the Sieve of Eratosthenes!")
+
+def Sieve_of_Eratosthenes(UB): 
+    
+    m = []
+
+    for i in range(2,abs(int(UB))+1):
+        m.append(i)
+
+   
+    h=0
+    while m[h] <= len(m):
+        
+        for j in m:
+            x=m[h]
+            if j%x ==0 and j!=x:
+                m.remove(j)
+        h+=1
+
+    print("\n"*2)
+    
+    if int(UB) > 0:
+        
+        print("Your desired set of prime numbers is: ","\n", (m))
+    
+    elif int(UB) <= 0:
+        
+        print("Please try again!")
+        Sieve_of_Eratosthenes(UB = input("To begin, please enter the upper bound of the range of numbers you wish to determine prime numbers for  : "))
+        
+Sieve_of_Eratosthenes(UB = input("To begin, please enter the upper bound of the range of numbers you wish to determine prime numbers for  : "))
